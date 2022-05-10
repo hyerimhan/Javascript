@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 vs jQuery -5</title>
+
+    <style>
+        body {
+            font-size: 15px;
+            font-family: "굴림";
+        }
+        #panel {
+            width: 600px;
+            height: 300px;
+            border: 2px solid #000;
+            position: relative;
+        }
+        #gigu {
+            position: absolute;
+            left: 50px;
+            top: 140px;
+            width: 50px;
+        }
+        #bar {
+            position: absolute;
+            left: 50px;
+            top: 190px;
+            width: 500px;
+            height: 15px;
+            background: #f30;
+        }
+        #nav {
+            text-align: center;
+            width: 600px;
+        }
+    </style>
+
+    <script src="libs/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        // 자바스크립트로 버튼을 클릭하면 지구 이미지가 움직이는 효과 만들기
+        // window.onload = function() {
+        //     var gigu = document.getElementById('gigu');
+        //     var btnStart = document.getElementById('btnStart');
+
+        //     var left = 50;
+        //     var timerID = 0;
+
+        //     // 버튼에 이벤트 등록
+        //     btnStart.addEventListener('click', function() {
+        //         // 지구이미지가 움직이기
+        //         timerID = setInterval(function() {
+        //             left++;
+        //             gigu.style.left = left + 'px';
+
+        //             // 500px에 도달하면 타이머 종료시키기
+        //             if(left >= 500) {
+        //                 clearInterval(timerID);
+        //                 timerID = 0;
+        //             }
+        //         }, 10);
+                
+        //     })
+        // }
+
+        // jQuery이용 버튼을 클릭하면 메시지를 출력하는 코드를 작성해보기
+        $(document).ready(function() {
+            var gigu = $('#gigu');
+            $('#btnStart').on('click', function() {
+                // 지구이미지 움직이기
+                gigu.animate({
+                    left:500
+                },5000);
+            })
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <div id="panel">
+            <div id="bar"></div>
+            <img src="images/gigu.png" id="gigu">
+        </div>
+        <div id="nav">
+            <button id="btnStart">버튼</button>
+        </div>
+    </div>
+</body>
+</html>
