@@ -53,7 +53,7 @@ function startAutoPlay() {
 
 // 다음 이미지를 보여주는 함수
 function nextImage() {
-    // 다음 이미지를 보여주기 위해 +1
+    // 다음 이미지를 보여주기 위해 currentIndex +1
     var index = currentIndex + 1;
     // 이미지가 60개
     if(index >= 60) {
